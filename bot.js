@@ -2,6 +2,7 @@ var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
 
+//Searching and liking "#NodeJS":
 //set search params
 var params = {
   q: '#nodejs',
@@ -16,10 +17,9 @@ T.get('search/tweets', params, function (err, data, response) {
     //response once a response is returned:
     //(clean this up later with a forEach function.)
     //grab a tweet with the hastag "#nodejs":
-    for (let i = 0; i < data.statuses.length; i++) {
-      let id = { id: data.statuses[i].id_str };
-      //then mark it as a favorite:
-      T.post('favorites/create', id, function(err, response) {
+    data.statuses.forEach(function (data) {
+      let id = { id: data.id_str };
+      T.post('favorites/create', id, function (err, response) {
         if (err) {
           console.log(err[0].message);
         } else {
@@ -30,7 +30,7 @@ T.get('search/tweets', params, function (err, data, response) {
           console.log('Favorited: ', 'https://twitter.com/${username}/status/${tweetId}');
         }
       });
-    }
+    });
   } else {
     console.log(err);
   }
