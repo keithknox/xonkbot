@@ -1,5 +1,5 @@
 var Twitter = require('twitter');
-var config = require('./config.js');
+//var config = require('./config.js');
 var T = new Twitter(config);
 
 //Searching and liking "#NodeJS":
