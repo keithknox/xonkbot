@@ -2,6 +2,9 @@ var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
 
+server.connection({
+    port: process.env.PORT || 3000
+});
 // var T = new Twitter({
 //     consumer_key: process.env.TWITTER_CONSUMER_KEY,
 //     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
