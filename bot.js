@@ -14,8 +14,6 @@ var params = {
 //GET request:
 T.get('search/tweets', params, function (err, data, response) {
   if (!err) {
-    //response once a response is returned:
-    //(clean this up later with a forEach function.)
     //grab a tweet with the hastag "#nodejs":
     data.statuses.forEach(function (data) {
       let id = { id: data.id_str };
