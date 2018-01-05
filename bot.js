@@ -1,6 +1,6 @@
 var Twitter = require('twitter');
 //var config = require('./config.js');
-var T = new Twitter(config);
+var T = new Twitter(consumer_key, consumer_secret, access_token_key, access_token_secret);
 
 //Searching and liking "#NodeJS":
 var twitterLikes = function(){
