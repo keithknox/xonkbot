@@ -4,7 +4,7 @@ var T = new Twitter(config);
 
 module.exports =
   //Searching and liking "#NodeJS":
-function byTweet() {
+function () {
   //set search params
     var params = {
       q: '#nodejs OR #NetNeutrality',
@@ -35,4 +35,4 @@ function byTweet() {
         console.log(err);
       }
     });
-  }
+  };
