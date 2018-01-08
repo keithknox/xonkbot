@@ -10,8 +10,6 @@ var mJoke = yoMomma();
 var oJoke = oneLinerJoke.getRandomJoke().body;
 var catFact = catFacts.random();
 
-
-
 module.exports = {
   momJoke: function() {
     T.post('statuses/update', {status: mjoke}, function (err, response) {
@@ -53,4 +51,4 @@ module.exports = {
       }
     });
   }
-}
+};
