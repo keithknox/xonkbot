@@ -4,14 +4,13 @@ var catFacts = require('cat-facts');
 var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
+var catFact = catFacts.random();
 var kJoke = knockKnock();
 var mJoke = yoMomma();
-var catFact = catFacts.random();
-
 
 module.exports = {
-  momJoke: function() {
-    T.post('statuses/update', {status: mJoke}, function (err, response) {
+  momJoke: function () {
+    T.post('statuses/update', { status: mJoke }, function (err, response) {
       if (err) {
         console.log(err[0].message);
       } else {
@@ -20,8 +19,9 @@ module.exports = {
       }
     });
   },
-  catFact: function(){
-    T.post('statuses/update', {status: catFact}, function (err, response) {
+
+  catFact: function () {
+    T.post('statuses/update', { status: catFact }, function (err, response) {
       if (err) {
         console.log(err[0].message);
       } else {
@@ -30,8 +30,9 @@ module.exports = {
       }
     });
   },
-  knockKnock: function(){
-    T.post('statuses/update', {status: kJoke}, function (err, response) {
+
+  knockKnock: function () {
+    T.post('statuses/update', { status: kJoke }, function (err, response) {
       if (err) {
         console.log(err[0].message);
       } else {
@@ -39,5 +40,5 @@ module.exports = {
         console.log('Status Updated with knock-knock joke @ : ' + date);
       }
     });
-  }
+  },
 };
