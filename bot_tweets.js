@@ -1,6 +1,6 @@
 var knockKnock = require('knock-knock-jokes');
 var yoMomma = require('yo-mamma').default;
-var catFacts = require ('cat-facts');
+var catFacts = require('cat-facts');
 var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
