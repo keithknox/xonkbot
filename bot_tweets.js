@@ -40,15 +40,6 @@ module.exports = {
         console.log('Status Updated with knock-knock joke @ : ' + date);
       }
     });
-  },
-  olJoke: function(){
-    T.post('statuses/update', {status: oJoke}, function (err, response) {
-      if (err) {
-        console.log(err[0].message);
-      } else {
-        let date = new Date();
-        console.log('Status Updated with one-liner @ : ' + date);
-      }
-    });
+  }
   }
 };
