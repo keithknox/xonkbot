@@ -9,3 +9,46 @@ var kJoke = knockKnock();
 var mJoke = yoMomma();
 var oJoke = oneLinerJoke.getRandomJoke().body;
 var catFact = catFacts.random();
+
+module.exports = {
+  momJoke: function() {
+    T.post('statuses/update', {status: mjoke}, function (err, response) {
+      if (err) {
+        console.log(err[0].message);
+      } else {
+        let date = new Date();
+        console.log('Status Updated with Mom Joke @ : ' + date);
+      }
+    });
+  },
+  catFact: function(){
+    T.post('statuses/update', {status: catFact}, function (err, response) {
+      if (err) {
+        console.log(err[0].message);
+      } else {
+        let date = new Date();
+        console.log('Status Updated with cat fact @ : ' + date);
+      }
+    });
+  },
+  knockKnock: function(){
+    T.post('statuses/update', {status: kJoke}, function (err, response) {
+      if (err) {
+        console.log(err[0].message);
+      } else {
+        let date = new Date();
+        console.log('Status Updated with knock-knock joke @ : ' + date);
+      }
+    });
+  },
+  olJoke: function(){
+    T.post('statuses/update', {status: oJoke}, function (err, response) {
+      if (err) {
+        console.log(err[0].message);
+      } else {
+        let date = new Date();
+        console.log('Status Updated with one-liner @ : ' + date);
+      }
+    });
+  }
+};
