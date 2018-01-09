@@ -1,7 +1,9 @@
 var botLikes = require('./bot_likes.js');
 var botTweets = require('./bot_tweets.js');
+var botReTweets = require('./bot_retweets.js');
 
 setInterval(botLikes, 1800000);
+setIterval(botReTweets, 1800000);
 setInterval(botTweets.catFact, 3600000);
 setInterval(botTweets.knockKnock, 3700000);
 setInterval(botTweets.momJoke, 3800000);
