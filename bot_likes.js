@@ -7,7 +7,7 @@ module.exports =
 function () {
 //set search params
   var params = {
-    q: '#NodeJS OR @burkeknox OR #NetNeutrality OR @KeithKnoxKnox',
+    q: '#NodeJS OR #NetNeutrality',
     count: 20,
     result_type: 'recent',
     lang: 'en'
