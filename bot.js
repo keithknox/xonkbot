@@ -7,3 +7,4 @@ setInterval(botLikes, 1800000);
 botTweets.catFact();
 botTweets.knockKnock()
 botTweets.momJoke();
+botTweets.chuckJoke();

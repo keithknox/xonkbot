@@ -1,3 +1,4 @@
+var axios = require('axios');
 var knockKnock = require('knock-knock-jokes');
 var yoMomma = require('yo-mamma').default;
 var catFacts = require ('cat-facts');
@@ -39,5 +40,19 @@ module.exports = {
         console.log('Status Updated with knock-knock joke @ : ' + date);
       }
     });
+  },
+  chuckJoke: function(){
+    return axios.get(url).then(
+      function (response) {
+      T.post('statuses/update', { status: response.data.value.joke }, function (err, response) {
+        if (err) {
+          console.log(err[0].message);
+        } else {
+          let date = new Date();
+          console.log('Status Updated with Chuck Joke @ : ' + date);
+        }
+      });
+    }
+    ).catch((error => console.log(error)));
   }
 };
