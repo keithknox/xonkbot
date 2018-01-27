@@ -43,7 +43,7 @@ module.exports = {
     });
   },
   chuckJoke: function () {
-    return axios.get(url).then(
+    return axios.get('http://api.icndb.com/jokes/random').then(
       function (response) {
       T.post('statuses/update', { status: response.data.value.joke }, function (err, response) {
         if (err) {
