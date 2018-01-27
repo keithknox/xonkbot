@@ -1,6 +1,5 @@
 // http://api.icndb.com/jokes/random
 const axios = require('axios');
-const fetch = require('fetch');
 const Twitter = require('twitter');
 const config = require('./config.js');
 const T = new Twitter(config);

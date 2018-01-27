@@ -16,7 +16,7 @@ module.exports = {
         console.log(err[0].message);
       } else {
         let date = new Date();
-        console.log('Status Updated with Mom Joke @ : ' + date);
+        console.log('Status Updated with Yo Momma Joke @ : ' + date);
       }
     });
   },
@@ -27,7 +27,7 @@ module.exports = {
         console.log(err[0].message);
       } else {
         let date = new Date();
-        console.log('Status Updated with cat fact @ : ' + date);
+        console.log('Status Updated with Cat Fact @ : ' + date);
       }
     });
   },
@@ -38,10 +38,11 @@ module.exports = {
         console.log(err[0].message);
       } else {
         let date = new Date();
-        console.log('Status Updated with knock-knock joke @ : ' + date);
+        console.log('Status Updated with Knock-Knock joke @ : ' + date);
       }
     });
   },
+
   chuckJoke: function () {
     return axios.get('http://api.icndb.com/jokes/random').then(
       function (response) {
