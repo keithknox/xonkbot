@@ -1,6 +1,7 @@
 {
   "name": "xonkbot",
   "version": "1.0.0",
+  "engines": "8.7.0",
   "description": "twitter bot",
   "main": "bot.js",
   "scripts": {
