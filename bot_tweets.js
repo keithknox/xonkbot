@@ -42,7 +42,7 @@ module.exports = {
       }
     });
   },
-  chuckJoke: function(){
+  chuckJoke: function () {
     return axios.get(url).then(
       function (response) {
       T.post('statuses/update', { status: response.data.value.joke }, function (err, response) {
