@@ -1,8 +1,8 @@
 module.exports = {
-  consumer_key: 'H5BBUobS0ZPWsI7EeDPfYyYeB',
-  consumer_secret: 'LeVKWhoovWM3TIHOTnnmQeOnQr4M4L86al54tiineN6lddtHXz',
-  access_token_key: '855468487959085056-k2lzmVfspzdEnTF7183eQlRQBeDWBxe',
-  access_token_secret: 'kvaI9dPaaG3MgQCdOMLgx3O14O0bvQ0om8Jmykiq3Ob7W',
-  giphy_key: 'trIEetB6DavObdvdZP4xgw5EgXjjc33e',
-  nasa_key: 'cDnwJ5Pbw9JiNwl6SVEHS1v1cKPqknZ4ZEq9RxJw'
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token_key: process.env.TWITTER_ACCESS_TOKEN ,
+  access_token_secret: process.env.TWITTER_ACCESS_SECRET,
+  giphy_key: process.env.GIPHY_KEY,
+  nasa_key: process.env.NASA_KEY
 };
