@@ -16,6 +16,7 @@ module.exports = {
           response.data.pipe(fs.createWriteStream('nasa.jpg'));
           console.log('File saved!');
         });
+
         //namting the title
         var title = response.data.title;
 
@@ -27,8 +28,7 @@ module.exports = {
             var status = {
               status: "Today's NASA Pic of the Day: " + title,
               media_ids: media.media_id_string // Pass the media id string
-            }
-
+            };
           //taking the image, and tweet and posting the tweet
             T.post('statuses/update', status, function (error, tweet, response) {
               if (!error) {
@@ -37,9 +37,8 @@ module.exports = {
             });
           }
         });
-
       }).catch(function(error){
           console.log('Error: ' + error);
     });
     }
-}
+};
