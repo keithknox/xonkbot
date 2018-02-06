@@ -10,5 +10,5 @@ setInterval(botTweets.catFact, 3600000);
 setInterval(botTweets.knockKnock, 3700000);
 setInterval(botTweets.momJoke, 3800000);
 setInterval(botTweets.chuckJoke, 1900000);
-setInterval(botPhotos.nasaPic, 86400000);
+// setInterval(botPhotos.nasaPic, 86400000);
 console.log("xonkbot is now live!");
