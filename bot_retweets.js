@@ -5,7 +5,7 @@ var T = new Twitter(config);
 module.exports =
   function () {
     var params = {
-      q: '#nodejs OR #NetNeutrality',
+      q: '#nodejs OR #NetNeutrality OR #dadjoke',
       count: 10,
       result_type: 'recent',
       lang: 'en'
