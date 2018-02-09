@@ -1,11 +1,16 @@
-var botLikes = require('./bot_likes/likes.js');
-var botTweets = require('./bot_tweets/tweets.js');
-var botReTweets = require('./bot_retweets.js');
+var catFact = require('./bot_tweets/cat_fact.js');
+var chuckJoke = require('./bot_tweets/chuck_joke.js');
+var knockKnock = require('./bot_tweets/knock_knock.js');
+var momJoke = require('./bot_tweets/mom_joke.js');
+var byHashTag = require('./bot_likes/by_hash_tag.js');
+var byUser = require('./bot_likes/by_user.js');
+var reTweets = require('./bot_retweets.js');
 
-
-botLikes;
-botTweets;
-botReTweets;
-
-// setInterval(botPhotos.nasaPic, 86400000);
+setInterval(catFact, 3800000);
+setInterval(knockKnock, 3800000);
+setInterval(momJoke, 3800000);
+setInterval(chuckJoke, 1900000);
+setInterval(byHashTag, 1800000);
+setInterval(byUser, 1800000);
+setInterval(reTweets, 1800000);
 console.log('xonkbot is now live!');

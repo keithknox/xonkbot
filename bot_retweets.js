@@ -2,7 +2,7 @@ var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
 
-function reTweets () {
+module.exports = function () {
   var params = {
     q: '#nodejs OR #NetNeutrality',
     count: 10,
@@ -23,8 +23,4 @@ function reTweets () {
       console.log(err);
     }
   });
-};
-
-module.exports = function () {
-  setInterval(reTweets, 2000000);
 };
