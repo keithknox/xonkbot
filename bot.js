@@ -4,7 +4,7 @@ var knockKnock = require('./bot_tweets/knock_knock.js');
 var momJoke = require('./bot_tweets/mom_joke.js');
 var byHashTag = require('./bot_likes/by_hash_tag.js');
 var byUser = require('./bot_likes/by_user.js');
-var reTweets = require('./bot_retweets.js');
+var reTweets = require('./bot_retweets/reTweets.js');
 
 setInterval(catFact, 3800000);
 setInterval(knockKnock, 3800000);
