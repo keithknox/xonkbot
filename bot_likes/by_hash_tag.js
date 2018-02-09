@@ -2,9 +2,7 @@ var Twitter = require('twitter');
 var config = require('./config.js');
 var T = new Twitter(config);
 
-module.exports ={
-
-  hashTagLikes: function() {
+  function hashTagLikes() {
     var params = {
       q: '#NodeJS OR #NetNeutrality',
       count: 20,
@@ -31,9 +29,9 @@ module.exports ={
         console.log(err);
       }
     });
-  },
+  }
 
-  userLikes: function () {
+  function userLikes() {
       var params = {
         screen_name: "@KeithKnoxKnox",
         count: 5
@@ -58,4 +56,3 @@ module.exports ={
         }
       });
     }
-}
