@@ -2,7 +2,7 @@ var Twitter = require('twitter');
 var config = require('../config.js');
 var T = new Twitter(config);
 
-function userLikes() {
+module.exports = function () {
   var params = {
     screen_name: '@KeithKnoxKnox',
     count: 5
@@ -26,4 +26,4 @@ function userLikes() {
       console.log(err);
     }
   });
-  }
+};
