@@ -2,7 +2,7 @@ var request = require('request');
 var rp = require('request-promise');
 var fs = require('fs');
 var Twitter = require('twitter');
-var config = require('./config.js');
+var config = require('../config.js');
 var T = new Twitter(config);
 
 
