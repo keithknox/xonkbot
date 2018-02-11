@@ -47,4 +47,6 @@ function uploadPhoto(title, date, image) {
   });
 }
 
-module.exports = getPhoto();
+module.exports = function() {
+  getPhoto();
+}
