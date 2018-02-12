@@ -17,6 +17,7 @@
     "cat-facts": "^1.0.2",
     "dotenv": "^5.0.0",
     "knock-knock-jokes": "^1.7.0",
+    "path": "^0.12.7",
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "twit": "^2.2.9",

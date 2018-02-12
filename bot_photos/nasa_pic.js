@@ -9,7 +9,7 @@ var T = new Twitter(config);
 function getPhoto() {
   request.get('https://api.nasa.gov/planetary/apod?api_key='+config.nasa_key, function (err, res, data) {
     data = JSON.parse(data);
-    savePhoto(data, './nasa.jpg');
+    savePhoto(data, './tmp/nasa.jpg');
   });
 }
 
@@ -22,7 +22,7 @@ function savePhoto(data, fileName) {
       console.log("Today's NASA Pic was saved.");
       var title = data.title;
       var date = data.date;
-      var image = fs.createReadStream('./nasa.jpg');
+      var image = fs.createReadStream(fileName);
       uploadPhoto(title, date, image);
     }
   });
@@ -46,6 +46,4 @@ function uploadPhoto(title, date, image) {
   });
 }
 
-module.exports = function () {
-  getPhoto();
-};
+module.exports = getPhoto;
