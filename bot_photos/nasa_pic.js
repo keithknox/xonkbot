@@ -33,7 +33,7 @@ function uploadPhoto(title, date, image) {
     if (!err) {
       console.log(media);
       var status = {
-        status: "Today's (' + date + ') NASA Pic of the day: " + title + '.',
+        status: "Today's (" + date + ") NASA Pic of the day: " + title + '.',
         media_ids: media.media_id_string
       };
       T.post('statuses/update', status, function (err, tweet, res) {
