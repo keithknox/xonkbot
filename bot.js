@@ -14,6 +14,6 @@ setInterval(chuckJoke, 1900000);
 setInterval(byHashTag, 1800000);
 setInterval(byUser, 1800000);
 setInterval(reTweets, 1800000);
-setInterval(nasaPic, 8640000);
+setInterval(nasaPic, 1000);
 
 console.log('xonkbot is now live!');
