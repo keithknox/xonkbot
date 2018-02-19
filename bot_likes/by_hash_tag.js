@@ -14,7 +14,7 @@ module.exports = function () {
     if (!err) {
       data.statuses.forEach(function (data) {
         let id = { id: data.id_str };
-        T.post('favorites/create', id, function (err, response) {
+        T.post('favorites/create/', id, function (err, response) {
           if (err) {
             console.log(err[0].message);
           } else {
