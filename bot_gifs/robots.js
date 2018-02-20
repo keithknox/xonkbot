@@ -1,12 +1,7 @@
 var request = require('request');
-var rp = require('request-promise');
 var fs = require('fs');
 var Twitter = require('twitter');
 var config = require('../config.js');
-var pathToMovie = './tmp/robots.gif';
-var mediaType = 'image/gif';
-var mediaData = fs.readFileSync(pathToMovie);
-var mediaSize = fs.statSync(pathToMovie).size;
 var T = new Twitter(config);
 
 function robotsGif() {
@@ -28,6 +23,3 @@ function saveGif(data, fileName) {
     }
   });
 };
-
-
-robotsGif();
