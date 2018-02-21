@@ -1,9 +1,9 @@
 var request = require('request');
 var fs = require('fs');
-var pathToMovie = './tmp/robots.gif';
+var pathToGif = './tmp/robots.gif';
 var mediaType = 'image/gif';
-var mediaData = fs.readFileSync(pathToMovie);
-var mediaSize = fs.statSync(pathToMovie).size;
+var mediaData = fs.readFileSync(pathToGif);
+var mediaSize = fs.statSync(pathToGif).size;
 var Twitter = require('twitter');
 var config = require('../config.js');
 var T = new Twitter(config);
@@ -14,7 +14,7 @@ module.exports = function () {
     .then(finalizeUpload)
     .then(mediaId => {
         var status = {
-          status: "I'd like to  share some family photos: ",
+          status: "I'd like to share some family photos: ",
           media_ids: mediaId,
         };
         T.post('statuses/update', status, function (err, tweet, res) {
@@ -67,7 +67,7 @@ function getRobotsGif() {
     body = JSON.parse(body);
     gif = body.data.images.fixed_height;
     console.log(body.data.images.fixed_height);
-    saveGif(gif, './tmp/robots.gif');
+    saveGif(gif, pathToGif);
   });
 }
 
