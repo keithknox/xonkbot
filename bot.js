@@ -16,6 +16,6 @@ var roboGifs = require('./bot_gifs/robots.js');
 // setInterval(byUser, 1800000);
 // setInterval(reTweets, 1800000);
 // setInterval(nasaPic, (86400000 / 2));
-setInterval(roboGifs, 120000);
+// setInterval(roboGifs, 120000);
 
 console.log('xonkbot is now live!');
