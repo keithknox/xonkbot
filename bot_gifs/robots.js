@@ -44,27 +44,28 @@ function makePost(endpoint, params) {
   });
 }
 
+initUpload()
+.then(appendUpload)
+.then(finalizeUpload)
+.then(mediaId => {
+    var status = {
+      status: "I'd like to share some family photos: ",
+      media_ids: mediaId,
+    };
+    T.post('statuses/update', status, function (err, tweet, res) {
+      if (!err) {
+        var date = new Date();
+        console.log('Status Updated with Robot GIF @ : ' + date);
+      }
+    });
+  });
+
 function robotsGif() {
-  request.get('http://api.giphy.com/v1/gifs/random?tag=robots&api_key='+ config.giphy_key, function(err, res, body) {
+  request.get('http://api.giphy.com/v1/gifs/random?tag=robots&api_key='+ config.giphy_key, function (err, res, body) {
     body = JSON.parse(body);
     gif = body.data.images.fixed_height;
     console.log(body.data.images.fixed_height);
     saveGif(gif, pathToGif);
-    initUpload()
-    .then(appendUpload)
-    .then(finalizeUpload)
-    .then(mediaId => {
-        var status = {
-          status: "I'd like to share some family photos: ",
-          media_ids: mediaId,
-        };
-        T.post('statuses/update', status, function (err, tweet, res) {
-          if (!err) {
-            var date = new Date();
-            console.log('Status Updated with Robot GIF @ : ' + date);
-          }
-        });
-      });
   });
 }
 
