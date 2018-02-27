@@ -1,10 +1,10 @@
 var yoMomma = require('yo-mamma').default;
 var mJoke = yoMomma();
-var Twitter = require('twitter');
+var Twitter = require('twit');
 var config = require('../config.js');
 var T = new Twitter(config);
 
-module.exports = function () {
+function momJoke() {
   T.post('statuses/update', { status: mJoke }, function (err, response) {
     if (err) {
       console.log(err[0].message);
@@ -14,3 +14,5 @@ module.exports = function () {
     }
   });
 };
+
+module.exports = momJoke;

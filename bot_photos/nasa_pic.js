@@ -1,12 +1,12 @@
 var request = require('request');
 var rp = require('request-promise');
 var fs = require('fs');
-var Twitter = require('twitter');
+var Twitter = require('twit');
 var config = require('../config.js');
 var T = new Twitter(config);
 
 
-function getPhoto() {
+function getNasaPic() {
   request.get('https://api.nasa.gov/planetary/apod?api_key='+config.nasa_key, function (err, res, data) {
     data = JSON.parse(data);
     savePhoto(data, './tmp/nasa.jpg');
@@ -42,8 +42,10 @@ function uploadPhoto(title, date, image) {
           console.log('Status Updated with NASA Pic @ : ' + date);
         }
       });
+    } else {
+      console.log(err);
     }
   });
 }
 
-module.exports = getPhoto;
+module.exports = getNasaPic;
