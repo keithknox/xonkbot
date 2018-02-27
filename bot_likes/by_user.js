@@ -1,23 +1,23 @@
-var Twitter = require('twitter');
+var Twitter = require('twit');
 var config = require('../config.js');
 var T = new Twitter(config);
 
-module.exports = function () {
+function byUser () {
   var params = {
     screen_name: '@KeithKnoxKnox',
     count: 5
   };
-  T.get('statuses/user_timeline', params, function (err, data, response)  {
+  T.get('statuses/user_timeline', params, function (err, data, res)  {
     if (!err) {
       data.forEach(function (data) {
-        let id = { id: data.id_str };
-        T.post('favorites/create', id, function (err, response) {
+        var id = { id: data.id_str };
+        T.post('favorites/create', id, function (err, res) {
           if (err) {
             console.log(err[0].message);
           } else {
-            let username = response.user.screen_name;
-            let tweetId = response.id_str;
-            let date = new Date();
+            var username = data.user.screen_name;
+            var tweetId = data.id_str;
+            var date = new Date();
             console.log('Favorited: ', 'https://twitter.com/'+username+'/status/'+tweetId+' at '+ date);
           }
         });
@@ -27,3 +27,5 @@ module.exports = function () {
     }
   });
 };
+
+module.exports = byUser;

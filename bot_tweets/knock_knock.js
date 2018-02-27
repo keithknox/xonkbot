@@ -1,10 +1,10 @@
-var Twitter = require('twitter');
+var Twitter = require('twit');
 var config = require('../config.js');
 var T = new Twitter(config);
 var knockKnock = require('knock-knock-jokes');
 var kJoke = knockKnock();
 
-module.exports = function () {
+function knockKnockJoke() {
   T.post('statuses/update', { status: kJoke }, function (err, response) {
     if (err) {
       console.log(err[0].message);
@@ -14,3 +14,5 @@ module.exports = function () {
     }
   });
 };
+
+module.exports = knockKnockJoke;
