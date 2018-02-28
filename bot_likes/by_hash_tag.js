@@ -21,7 +21,7 @@ function byHashTag () {
             var date = new Date();
             console.log('Favorited: ', 'https://twitter.com/'+username+'/status/'+tweetId+' at '+ date);
           } else {
-            console.log(err);
+            console.log(err.message);
           }
         });
       });

@@ -7,7 +7,7 @@ var kJoke = knockKnock();
 function knockKnockJoke() {
   T.post('statuses/update', { status: kJoke }, function (err, response) {
     if (err) {
-      console.log(err[0].message);
+      console.log(err.message);
     } else {
       let date = new Date();
       console.log('Status Updated with Knock-Knock joke @ : ' + date);

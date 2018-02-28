@@ -7,7 +7,7 @@ var T = new Twitter(config);
 function momJoke() {
   T.post('statuses/update', { status: mJoke }, function (err, response) {
     if (err) {
-      console.log(err[0].message);
+      console.log(err.message);
     } else {
       var date = new Date();
       console.log('Status Updated with Yo Momma Joke @ : ' + date);

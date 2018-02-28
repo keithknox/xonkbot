@@ -7,7 +7,7 @@ var catFact = catFacts.random();
 function postCatFacts() {
   T.post('statuses/update', { status: catFact }, function (err, response) {
       if (err) {
-        console.log(err[0].message);
+        console.log(err.message);
       } else {
         let date = new Date();
         console.log('Status Updated with Cat Fact @ : ' + date);

@@ -9,7 +9,7 @@ function chuckJoke() {
       data = JSON.parse(response);
       T.post('statuses/update', { status: data.value.joke }, function (err, response) {
         if (err) {
-          console.log(err[0].message);
+          console.log(err.message);
         } else {
           let date = new Date();
           console.log('Status Updated with Chuck Joke @ : ' + date);

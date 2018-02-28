@@ -22,7 +22,7 @@ function reTweet () {
         });
       });
     } else {
-      console.log(err);
+      console.log(err.message);
     }
   });
 };
