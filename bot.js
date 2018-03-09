@@ -7,6 +7,7 @@ var byUser = require('./bot_likes/by_user.js');
 var reTweets = require('./bot_retweets/retweets.js');
 var nasaPic = require('./bot_photos/nasa_pic.js');
 var roboGifs = require('./bot_gifs/robots.js');
+var followers = require('./bot_follows/bot_follows.js');
 
 setInterval(catFact, 3800000);
 setInterval(knockKnock, 7200000);
@@ -16,6 +17,7 @@ setInterval(byHashTag, 1800000);
 setInterval(byUser, 1800000);
 setInterval(reTweets, 1800000);
 setInterval(nasaPic, (86400000 / 2));
-setInterval(roboGifs, 1200000);
+setInterval(roboGifs, 3600000);
+setInterval(followers, 3600000);
 
 console.log('xonkbot is now live!');
