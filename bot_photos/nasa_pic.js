@@ -1,15 +1,15 @@
 var request = require('request');
-var rp = require('request-promise');
 var fs = require('fs');
+var imgPath = './tmp/nasa.gif';
 var Twitter = require('twit');
-var config = require('../config.js');
+var config = require('./config.js');
 var T = new Twitter(config);
 
 
 function getNasaPic() {
   request.get('https://api.nasa.gov/planetary/apod?api_key='+config.nasa_key, function (err, res, data) {
     data = JSON.parse(data);
-    savePhoto(data, './tmp/nasa.jpg');
+    savePhoto(data, imgPath);
   });
 }
 
@@ -17,7 +17,7 @@ function savePhoto(data, fileName) {
   var file = fs.createWriteStream(fileName);
   request(data).pipe(file).on('close', function (err) {
     if (err) {
-      console.log(err);
+      console.log("Error: " + err.message);
     } else {
       console.log("Today's NASA Pic was saved.");
       var title = data.title;
@@ -29,7 +29,7 @@ function savePhoto(data, fileName) {
 }
 
 function uploadPhoto(title, date, image) {
-  T.post('media/upload', { media: image }, function (err, media, res) {
+  T.postMediaChunked({ file_path: imgPath }, function (err, media, res) {
     if (!err) {
       console.log(media);
       var status = {
@@ -43,7 +43,7 @@ function uploadPhoto(title, date, image) {
         }
       });
     } else {
-      console.log(err);
+      console.log("Error: " + err.message);
     }
   });
 }
