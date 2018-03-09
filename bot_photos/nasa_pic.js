@@ -2,7 +2,7 @@ var request = require('request');
 var fs = require('fs');
 var imgPath = './tmp/nasa.gif';
 var Twitter = require('twit');
-var config = require('./config.js');
+var config = require('../config.js');
 var T = new Twitter(config);
 
 
